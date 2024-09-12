@@ -592,3 +592,114 @@ x==========x]
 [2024-10-28 11:59:29,457: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-10-28 12:53:32,346: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-10-28 12:53:32,347: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 12:53:32,348: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 12:53:32,348: INFO: common: created directory at: artifacts]
+[2024-10-28 12:53:32,349: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-10-28 12:53:32,349: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1GFqiSugSMBLKLcIfeyy6F7jB7X0At5Xu/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-10-28 12:54:38,257: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1GFqiSugSMBLKLcIfeyy6F7jB7X0At5Xu/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-10-28 12:54:38,627: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-10-28 12:54:46,310: INFO: stage_02_prepare_base_model: *******************]
+[2024-10-28 12:54:46,310: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2024-10-28 12:54:46,312: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 12:54:46,313: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 12:54:46,313: INFO: common: created directory at: artifacts]
+[2024-10-28 12:54:46,315: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-10-28 12:54:46,607: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-10-28 12:54:46,761: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-10-28 12:55:45,822: INFO: stage_03_model_training: *******************]
+[2024-10-28 12:55:45,824: INFO: stage_03_model_training: >>>>>> stage Model Training started <<<<<<]
+[2024-10-28 12:55:45,825: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 12:55:45,826: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 12:55:45,826: INFO: common: created directory at: artifacts]
+[2024-10-28 12:55:45,827: INFO: common: created directory at: artifacts\training]
+[2024-10-28 12:56:50,464: INFO: stage_03_model_training: >>>>>> stage Model Training completed <<<<<<
+
+x==========x]
+[2024-10-28 12:56:55,884: INFO: stage_04_model_evaluation: *******************]
+[2024-10-28 12:56:55,884: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-10-28 12:56:55,886: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 12:56:55,887: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 12:56:55,888: INFO: common: created directory at: artifacts]
+[2024-10-28 12:57:03,446: INFO: common: json file saved at: scores.json]
+[2024-10-28 12:57:03,446: INFO: common: json file saved at: scores.json]
+[2024-10-28 12:57:04,732: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-10-28 12:57:05,163: INFO: builder_impl: Assets written to: C:\Users\flori\AppData\Local\Temp\tmpnho6zmrl\model\data\model\assets]
+[2024-10-28 12:57:11,398: ERROR: stage_04_model_evaluation: No module named 'distutils._modified']
+Traceback (most recent call last):
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 31, in <module>
+    obj.main()
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 21, in main
+    evaluation.log_into_mlflow()
+  File "d:\RenalDiseaseDLProject\src\cnnClassifier\components\model_evaluation_mlflow.py", line 72, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tensorflow\__init__.py", line 222, in log_model
+    return Model.log(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\models\model.py", line 552, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\fluent.py", line 817, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\client.py", line 1069, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 448, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\store\artifact\local_artifact_repo.py", line 58, in log_artifacts
+    dir_util.copy_tree(src=local_dir, dst=artifact_dir, preserve_mode=0, preserve_times=0)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 155, in copy_tree
+    return list(itertools.chain.from_iterable(map(copy_one, names)))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 197, in _copy_one
+    file_util.copy_file(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\file_util.py", line 104, in copy_file
+    from distutils._modified import newer
+ModuleNotFoundError: No module named 'distutils._modified'
+[2024-10-28 12:57:38,575: INFO: stage_04_model_evaluation: *******************]
+[2024-10-28 12:57:38,575: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-10-28 12:57:38,578: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 12:57:38,579: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 12:57:38,580: INFO: common: created directory at: artifacts]
+[2024-10-28 12:57:45,900: INFO: common: json file saved at: scores.json]
+[2024-10-28 12:57:45,901: INFO: common: json file saved at: scores.json]
+[2024-10-28 12:57:47,224: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-10-28 12:57:47,641: INFO: builder_impl: Assets written to: C:\Users\flori\AppData\Local\Temp\tmpickkpgba\model\data\model\assets]
+[2024-10-28 12:57:53,997: ERROR: stage_04_model_evaluation: No module named 'distutils._modified']
+Traceback (most recent call last):
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 31, in <module>
+    obj.main()
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 21, in main
+    evaluation.log_into_mlflow()
+  File "d:\RenalDiseaseDLProject\src\cnnClassifier\components\model_evaluation_mlflow.py", line 72, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tensorflow\__init__.py", line 222, in log_model
+    return Model.log(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\models\model.py", line 552, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\fluent.py", line 817, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\client.py", line 1069, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 448, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\store\artifact\local_artifact_repo.py", line 58, in log_artifacts
+    dir_util.copy_tree(src=local_dir, dst=artifact_dir, preserve_mode=0, preserve_times=0)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 155, in copy_tree
+    return list(itertools.chain.from_iterable(map(copy_one, names)))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 197, in _copy_one
+    file_util.copy_file(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\file_util.py", line 104, in copy_file
+    from distutils._modified import newer
+ModuleNotFoundError: No module named 'distutils._modified'
+[2024-10-28 12:59:04,792: INFO: stage_04_model_evaluation: *******************]
+[2024-10-28 12:59:04,792: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-10-28 12:59:04,794: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 12:59:04,795: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 12:59:04,795: INFO: common: created directory at: artifacts]
+[2024-10-28 12:59:11,250: INFO: common: json file saved at: scores.json]
+[2024-10-28 12:59:11,251: INFO: common: json file saved at: scores.json]
+[2024-10-28 12:59:11,251: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]

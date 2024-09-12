@@ -36,3 +36,8 @@ conda activate cnncls
 ```bash
 pip install -r requirements.txt
 ```
+### DvC cmds
+
+1. dvc init
+2. dvc repo
+3. dvc dag

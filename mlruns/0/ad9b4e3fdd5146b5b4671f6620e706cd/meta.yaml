@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/RenalDiseaseDLProject/mlruns/0/ad9b4e3fdd5146b5b4671f6620e706cd/artifacts
+end_time: 1730113031396
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ad9b4e3fdd5146b5b4671f6620e706cd
+run_name: legendary-mule-100
+run_uuid: ad9b4e3fdd5146b5b4671f6620e706cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730113023875
+status: 4
+tags: []
+user_id: flori

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/RenalDiseaseDLProject/mlruns/0/be2cddaa2c4747a69830f9e33e6b45ad/artifacts
+end_time: 1730113073996
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: be2cddaa2c4747a69830f9e33e6b45ad
+run_name: indecisive-seal-912
+run_uuid: be2cddaa2c4747a69830f9e33e6b45ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730113066327
+status: 4
+tags: []
+user_id: flori
