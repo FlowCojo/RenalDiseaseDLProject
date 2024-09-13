@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/RenalDiseaseDLProject/mlruns/0/40f13ad9a6c1409ab4de16e81ea1079e/artifacts
+end_time: 1730118228497
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 40f13ad9a6c1409ab4de16e81ea1079e
+run_name: charming-doe-157
+run_uuid: 40f13ad9a6c1409ab4de16e81ea1079e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730118221436
+status: 4
+tags: []
+user_id: flori

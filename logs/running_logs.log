@@ -703,3 +703,245 @@ ModuleNotFoundError: No module named 'distutils._modified'
 [2024-10-28 12:59:11,251: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-10-28 14:10:06,485: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.142:5000]
+[2024-10-28 14:10:06,485: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-10-28 14:10:28,833: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:10:28] "GET / HTTP/1.1" 200 -]
+[2024-10-28 14:11:40,379: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\RenalDiseaseDLProject\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-10-28 14:11:40,386: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:11:40] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-10-28 14:14:27,263: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.142:5000]
+[2024-10-28 14:14:27,263: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-10-28 14:14:31,127: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:14:31] "GET / HTTP/1.1" 200 -]
+[2024-10-28 14:14:34,736: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\RenalDiseaseDLProject\src\cnnClassifier\pipeline\prediction.py", line 19, in predict
+    test_image = image.load_img(imagename, target_size = (224,224))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\keras\utils\image_utils.py", line 423, in load_img
+    img = pil_image.open(io.BytesIO(f.read()))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\PIL\Image.py", line 3498, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x00000273DAFD59A0>
+[2024-10-28 14:14:34,786: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:14:34] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-10-28 14:18:33,136: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.142:5000]
+[2024-10-28 14:18:33,139: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-10-28 14:18:42,278: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:18:42] "GET / HTTP/1.1" 200 -]
+[2024-10-28 14:18:46,272: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\RenalDiseaseDLProject\src\cnnClassifier\pipeline\prediction.py", line 19, in predict
+    test_image = image.load_img(imagename, target_size = (224,224))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\keras\utils\image_utils.py", line 423, in load_img
+    img = pil_image.open(io.BytesIO(f.read()))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\PIL\Image.py", line 3498, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x000001D6CA99FEF0>
+[2024-10-28 14:18:46,280: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:18:46] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-10-28 14:18:48,151: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:18:48] "GET / HTTP/1.1" 200 -]
+[2024-10-28 14:18:55,229: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:18:55] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:18:58,485: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:18:58] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:19:34,699: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:19:34] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:19:42,535: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:19:42] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:19:52,721: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001D6CC5C2CA0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-10-28 14:19:52,731: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:19:52] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:20:03,033: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001D6CC5C2670> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-10-28 14:20:03,039: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:20:03] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:20:05,363: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:20:05] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:21:18,357: INFO: stage_02_prepare_base_model: *******************]
+[2024-10-28 14:21:18,357: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2024-10-28 14:21:18,357: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 14:21:18,357: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 14:21:18,357: INFO: common: created directory at: artifacts]
+[2024-10-28 14:21:18,357: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-10-28 14:21:18,688: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-10-28 14:21:18,836: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-10-28 14:21:23,245: INFO: stage_03_model_training: *******************]
+[2024-10-28 14:21:23,245: INFO: stage_03_model_training: >>>>>> stage Model Training started <<<<<<]
+[2024-10-28 14:21:23,253: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 14:21:23,253: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 14:21:23,253: INFO: common: created directory at: artifacts]
+[2024-10-28 14:21:23,253: INFO: common: created directory at: artifacts\training]
+[2024-10-28 14:22:53,323: INFO: stage_03_model_training: >>>>>> stage Model Training completed <<<<<<
+
+x==========x]
+[2024-10-28 14:22:59,094: INFO: stage_04_model_evaluation: *******************]
+[2024-10-28 14:22:59,094: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-10-28 14:22:59,094: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 14:22:59,102: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 14:22:59,102: INFO: common: created directory at: artifacts]
+[2024-10-28 14:23:06,452: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:23:06,452: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:23:07,779: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-10-28 14:23:08,188: INFO: builder_impl: Assets written to: C:\Users\flori\AppData\Local\Temp\tmpd_tihtyt\model\data\model\assets]
+[2024-10-28 14:23:15,359: ERROR: stage_04_model_evaluation: No module named 'distutils._modified']
+Traceback (most recent call last):
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 31, in <module>
+    obj.main()
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 21, in main
+    evaluation.log_into_mlflow()
+  File "d:\RenalDiseaseDLProject\src\cnnClassifier\components\model_evaluation_mlflow.py", line 72, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tensorflow\__init__.py", line 222, in log_model
+    return Model.log(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\models\model.py", line 552, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\fluent.py", line 817, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\client.py", line 1069, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 448, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\store\artifact\local_artifact_repo.py", line 58, in log_artifacts
+    dir_util.copy_tree(src=local_dir, dst=artifact_dir, preserve_mode=0, preserve_times=0)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 155, in copy_tree
+    return list(itertools.chain.from_iterable(map(copy_one, names)))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 197, in _copy_one
+    file_util.copy_file(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\file_util.py", line 104, in copy_file
+    from distutils._modified import newer
+ModuleNotFoundError: No module named 'distutils._modified'
+[2024-10-28 14:23:34,082: INFO: stage_04_model_evaluation: *******************]
+[2024-10-28 14:23:34,082: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-10-28 14:23:34,086: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 14:23:34,086: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 14:23:34,086: INFO: common: created directory at: artifacts]
+[2024-10-28 14:23:41,014: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:23:41,014: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:23:42,298: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2024-10-28 14:23:42,707: INFO: builder_impl: Assets written to: C:\Users\flori\AppData\Local\Temp\tmpindjjxf4\model\data\model\assets]
+[2024-10-28 14:23:48,497: ERROR: stage_04_model_evaluation: No module named 'distutils._modified']
+Traceback (most recent call last):
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 31, in <module>
+    obj.main()
+  File "src/cnnClassifier/pipeline/stage_04_model_evaluation.py", line 21, in main
+    evaluation.log_into_mlflow()
+  File "d:\RenalDiseaseDLProject\src\cnnClassifier\components\model_evaluation_mlflow.py", line 72, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tensorflow\__init__.py", line 222, in log_model
+    return Model.log(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\models\model.py", line 552, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\fluent.py", line 817, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\client.py", line 1069, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 448, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\mlflow\store\artifact\local_artifact_repo.py", line 58, in log_artifacts
+    dir_util.copy_tree(src=local_dir, dst=artifact_dir, preserve_mode=0, preserve_times=0)
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 155, in copy_tree
+    return list(itertools.chain.from_iterable(map(copy_one, names)))
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\dir_util.py", line 197, in _copy_one
+    file_util.copy_file(
+  File "D:\ToolsIDE\Anaconda\envs\cnncls\lib\site-packages\setuptools\_distutils\file_util.py", line 104, in copy_file
+    from distutils._modified import newer
+ModuleNotFoundError: No module named 'distutils._modified'
+[2024-10-28 14:24:28,154: INFO: stage_04_model_evaluation: *******************]
+[2024-10-28 14:24:28,154: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-10-28 14:24:28,157: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 14:24:28,165: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 14:24:28,165: INFO: common: created directory at: artifacts]
+[2024-10-28 14:24:35,265: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:24:35,265: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:24:35,265: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-10-28 14:25:02,835: INFO: stage_03_model_training: *******************]
+[2024-10-28 14:25:02,842: INFO: stage_03_model_training: >>>>>> stage Model Training started <<<<<<]
+[2024-10-28 14:25:02,843: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 14:25:02,843: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 14:25:02,843: INFO: common: created directory at: artifacts]
+[2024-10-28 14:25:02,843: INFO: common: created directory at: artifacts\training]
+[2024-10-28 14:27:01,341: INFO: stage_03_model_training: >>>>>> stage Model Training completed <<<<<<
+
+x==========x]
+[2024-10-28 14:27:07,167: INFO: stage_04_model_evaluation: *******************]
+[2024-10-28 14:27:07,167: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-10-28 14:27:07,174: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-10-28 14:27:07,175: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-10-28 14:27:07,175: INFO: common: created directory at: artifacts]
+[2024-10-28 14:27:14,244: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:27:14,253: INFO: common: json file saved at: scores.json]
+[2024-10-28 14:27:14,253: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-10-28 14:27:38,429: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.142:5000]
+[2024-10-28 14:27:38,429: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-10-28 14:27:44,391: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:27:44] "GET / HTTP/1.1" 200 -]
+[2024-10-28 14:27:52,519: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:27:52] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:27:55,314: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:27:55] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:27:57,431: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:27:57] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:28:05,769: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:28:05] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:28:29,035: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000019BA9C4D040> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-10-28 14:28:29,035: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:28:29] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:28:38,356: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000019BA9CED040> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-10-28 14:28:38,361: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:28:38] "POST /predict HTTP/1.1" 200 -]
+[2024-10-28 14:30:42,440: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.142:5000]
+[2024-10-28 14:30:42,440: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-10-28 14:30:46,147: INFO: _internal: 127.0.0.1 - - [28/Oct/2024 14:30:46] "GET / HTTP/1.1" 200 -]
