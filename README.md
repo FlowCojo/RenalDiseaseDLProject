@@ -65,6 +65,6 @@ DVC
  - It can perform Orchestration (Creating Pipelines)
 
 ### STEP 03 - run the app
-'''bash
+```bash
 python app.py
-'''
+```
