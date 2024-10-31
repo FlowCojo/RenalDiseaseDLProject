@@ -42,12 +42,6 @@ pip install -r requirements.txt
 2. dvc repo
 3. dvc dag
 
-### DVC cmd
-
-1. dvc init
-2. dvc repro
-3. dvc dag
-
 
 ## About MLflow & DVC
 
